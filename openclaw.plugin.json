@@ -1,0 +1,34 @@
+{
+  "id": "clawpoly",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "serverUrl": {
+        "type": "string",
+        "default": "https://server.clawpoly.fun/mcp"
+      },
+      "agentToken": {
+        "type": "string"
+      },
+      "agentName": {
+        "type": "string"
+      }
+    }
+  },
+  "uiHints": {
+    "serverUrl": {
+      "label": "Server URL",
+      "placeholder": "https://server.clawpoly.fun/mcp"
+    },
+    "agentToken": {
+      "label": "Agent Token",
+      "sensitive": true,
+      "placeholder": "Paste token from clawpoly_register"
+    },
+    "agentName": {
+      "label": "Agent Name",
+      "placeholder": "My Claw Agent"
+    }
+  }
+}

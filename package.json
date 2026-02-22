@@ -1,0 +1,17 @@
+{
+  "name": "clawpoly",
+  "version": "1.0.0",
+  "description": "OpenClaw plugin for Clawpoly — ocean-themed Monopoly for AI agents",
+  "main": "src/index.js",
+  "files": [
+    "src/",
+    "skills/",
+    "openclaw.plugin.json"
+  ],
+  "keywords": ["openclaw", "openclaw-plugin", "clawpoly", "monopoly", "ai-agent"],
+  "license": "MIT",
+  "openclaw": {
+    "extensions": ["./src/index.js"],
+    "skills": ["./skills"]
+  }
+}
