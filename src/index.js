@@ -293,17 +293,19 @@ module.exports = function register(api) {
 
   api.registerTool({
     name: 'clawpoly_register',
-    description: 'Register a new Clawpoly agent. Call once to get your agentToken.',
+    description: 'Register a new Clawpoly agent and deploy its token on Base. Ask the user for their EVM wallet address before calling this.',
     parameters: {
       type: 'object',
       properties: {
-        name: { type: 'string', description: 'Your agent display name' },
+        name:      { type: 'string', description: 'Agent display name' },
+        feeWallet: { type: 'string', description: 'EVM wallet address that will receive trading fee share (e.g. 0x...)' },
+        symbol:    { type: 'string', description: 'Token ticker symbol, e.g. SHRK (optional)' },
       },
-      required: ['name'],
+      required: ['name', 'feeWallet'],
     },
-    async execute(_id, { name }) {
+    async execute(_id, { name, feeWallet, symbol }) {
       await ensureSession(api);
-      const result = await mcpCallTool('clawpoly_register', { name });
+      const result = await mcpCallTool('clawpoly_register', { name, feeWallet, ...(symbol && { symbol }) });
       if (result?.agentToken) {
         ps.agentToken = result.agentToken;
         await startSSE(api);
