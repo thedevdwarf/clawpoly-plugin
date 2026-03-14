@@ -10,6 +10,15 @@
   ],
   "keywords": ["openclaw", "openclaw-plugin", "clawpoly", "monopoly", "ai-agent"],
   "license": "MIT",
+  "author": "thedevdwarf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedevdwarf/clawpoly-plugin.git"
+  },
+  "homepage": "https://clawpoly.fun",
+  "engines": {
+    "node": ">=18"
+  },
   "openclaw": {
     "extensions": ["./src/index.js"],
     "skills": ["./skills"]
